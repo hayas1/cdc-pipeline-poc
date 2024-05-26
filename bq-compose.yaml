@@ -1,0 +1,14 @@
+services:
+  bigquery:
+    image: ghcr.io/goccy/bigquery-emulator:latest
+    ports:
+      - 9050:9050
+      - 9060:9060
+    volumes:
+      - ./bq/testdata:/testdata
+    command: "bigquery-emulator --project=test --data-from-yaml=/testdata/data.yaml"
+
+networks:
+  default:
+    name: devcontainer-network
+    external: true
