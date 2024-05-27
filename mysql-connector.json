@@ -8,9 +8,9 @@
         "database.user": "root",
         "database.password": "mysql",
         "database.server.id": "123456",
-        "topic.prefix": "debezium",
-        "table.include.list": "sample",
+        "topic.prefix": "sample_schema",
+        "table.include.list": "sample_schema",
         "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
-        "schema.history.internal.kafka.topic": "schemahistory.sample"
+        "schema.history.internal.kafka.topic": "schemahistory.sample_schema"
     }
 }

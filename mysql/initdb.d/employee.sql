@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS sample;
-CREATE SCHEMA sample;
-USE sample;
+DROP SCHEMA IF EXISTS sample_schema;
+CREATE SCHEMA sample_schema;
+USE sample_schema;
 
 DROP TABLE IF EXISTS employee;
 
