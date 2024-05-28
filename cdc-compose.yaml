@@ -4,7 +4,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
     volumes:
@@ -14,7 +14,7 @@ services:
     image: debezium/connect:2.4
     environment:
       - BOOTSTRAP_SERVERS=kafka:9092
-      - GROUP_ID=debezium-events
+      - GROUP_ID=1
       - CONFIG_STORAGE_TOPIC=debezium_configs
       - OFFSET_STORAGE_TOPIC=debezium_offsets
       - STATUS_STORAGE_TOPIC=debezium_statuses

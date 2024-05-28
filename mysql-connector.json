@@ -5,11 +5,11 @@
         "tasks.max": "1",
         "database.hostname": "mysql",
         "database.port": "3306",
-        "database.user": "root",
-        "database.password": "mysql",
+        "database.user": "debezium",
+        "database.password": "debezium",
         "database.server.id": "123456",
         "topic.prefix": "sample_schema",
-        "table.include.list": "sample_schema",
+        "table.include.list": "sample_schema.(.*)",
         "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
         "schema.history.internal.kafka.topic": "schemahistory.sample_schema"
     }
