@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS sample_schema.employee;
 CREATE TABLE sample_schema.employee
 (
-  id           INT(10),
-  name     VARCHAR(40)
+    id INT(10) NOT NULL PRIMARY KEY,
+    name VARCHAR(40)
 );
 
 
