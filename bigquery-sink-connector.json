@@ -1,0 +1,22 @@
+{
+    "name": "bigquery-sink-connector",
+    "config": {
+        "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
+        "tasks.max": "1",
+        "consumer.auto.offset.reset": "earliest",
+        "topics.regex": "mysql_hostname.*",
+        "sanitizeTopics": "true",
+        "autoCreateTables": "true",
+        "keyfile": "/secrets/gcpgcpg-54cf1ea2bc7f.json",
+        "schemaRetriever": "com.wepay.kafka.connect.bigquery.retrieve.IdentitySchemaRetriever",
+        "project": "gcpgcpg",
+        "defaultDataset": "cdc_pipeline",
+        "allBQFieldsNullable": true,
+        "allowNewBigQueryFields": true,
+        "transforms": "regexTopicRename,extractAfterData",
+        "transforms.regexTopicRename.type": "org.apache.kafka.connect.transforms.RegexRouter",
+        "transforms.regexTopicRename.regex": "mysql_hostname.(.*)",
+        "transforms.regexTopicRename.replacement": "$1",
+        "transforms.extractAfterData.type": "io.debezium.transforms.ExtractNewRecordState"
+    }
+}

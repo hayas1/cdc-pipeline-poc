@@ -22,6 +22,8 @@ services:
       - STATUS_STORAGE_TOPIC=debezium_statuses
     ports:
       - 8083:8083
+    volumes:
+      - ./secrets:/secrets
   debezium-ui:
     image: debezium/debezium-ui:latest
     ports:
