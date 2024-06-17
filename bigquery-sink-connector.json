@@ -17,8 +17,6 @@
         "transforms.regexTopicRename.type": "org.apache.kafka.connect.transforms.RegexRouter",
         "transforms.regexTopicRename.regex": "mysql_hostname.(.*)",
         "transforms.regexTopicRename.replacement": "$1",
-        "transforms.extractAfterData.type": "io.debezium.transforms.ExtractNewRecordState",
-        "errors.tolerance": "all",
-        "errors.deadletterqueue.topic.name": "dlq-bigquery-sink-connector"
+        "transforms.extractAfterData.type": "io.debezium.transforms.ExtractNewRecordState"
     }
 }
