@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 docker network create devcontainer-network
-docker-compose -f cdc-compose.yaml up --builid -d
+docker-compose -f cdc-compose.yaml up --build -d
 
 topics=$(docker-compose -f cdc-compose.yaml exec kafka kafka-topics.sh --list --bootstrap-server=localhost:9092)
 echo "$topics" | grep debezium_configs
