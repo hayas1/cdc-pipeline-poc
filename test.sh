@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
+docker network create devcontainer-network
 docker-compose -f cdc-compose.yaml up -d
 
 topics=$(docker-compose -f cdc-compose.yaml exec kafka kafka-topics.sh --list --bootstrap-server=localhost:9092)
